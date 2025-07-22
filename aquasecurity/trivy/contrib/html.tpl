@@ -1,4 +1,10 @@
- {{- if . }}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{{- if . }}
+  </head>
+  <body>
     <h1>{{- escapeXML ( index . 0 ).Target }} - Trivy Report - {{ now }}</h1>
     <table>
     {{- range . }}
@@ -57,5 +63,9 @@
     {{- end }}
     </table>
 {{- else }}
+  </head>
+  <body>
     <h1>Trivy Returned Empty Report</h1>
 {{- end }}
+  </body>
+</html>
